@@ -140,7 +140,7 @@ const EventCard = ({ title, description, link, icon: Icon, delay, comingSoon, on
           </div>
         </div>
       </motion.div>
-    </div>
+    </motion.a>
   );
 };
 
