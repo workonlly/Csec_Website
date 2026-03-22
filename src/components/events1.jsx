@@ -2,17 +2,36 @@
 
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Zap, Layers, ChevronRight, Sparkles } from 'lucide-react';
+import { Terminal, Zap, Layers, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 
 // --- Individual Event Card Component ---
-const EventCard = ({ title, description, link, icon: Icon, delay, comingSoon, onComingSoonClick }) => {
+const EventCard = ({
+  title,
+  description,
+  link,
+  icon: Icon,
+  delay,
+  comingSoon,
+  onComingSoonClick,
+  platform,
+  date,
+  format,
+  accentColor,
+  accentGlow,
+}) => {
   // Logic to determine if this specific card should be bigger (CodeArena)
   const isFeatured = title === "CodeArena";
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const handleCardClick = (event) => {
     if (!comingSoon) return;
     event.preventDefault();
     onComingSoonClick?.(title);
+  };
+
+  const handleFlip = (event) => {
+    event.preventDefault();
+    setIsFlipped((prev) => !prev);
   };
 
   return (
@@ -96,6 +115,7 @@ const EventCard = ({ title, description, link, icon: Icon, delay, comingSoon, on
             </span>
 
             <button
+              type="button"
               onClick={handleFlip}
               className={`mt-5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest px-5 py-2 rounded-full border transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer
               ${isFeatured ? "text-purple-300 border-purple-500/40 bg-purple-500/10 hover:bg-purple-500/20" : "text-zinc-400 border-white/10 bg-white/5 hover:bg-white/10"}`}
@@ -271,6 +291,11 @@ const Events = () => {
               key={idx}
               title={event.title}
               icon={event.icon}
+              platform={event.platform}
+              date={event.date}
+              format={event.format}
+              accentColor={event.accentColor}
+              accentGlow={event.accentGlow}
               description={event.description}
               link={event.link}
               delay={event.delay}
