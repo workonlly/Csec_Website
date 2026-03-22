@@ -15,7 +15,7 @@ const PrizeCard = ({ prize }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: prize.delay }}
-      className={`relative w-full max-w-[320px] h-[420px] flex flex-col ${prize.mobileOrder} ${prize.desktopOrder} ${prize.transform} cursor-pointer [perspective:1000px] group`}
+      className={`relative w-full max-w-[280px] sm:max-w-[320px] h-[360px] sm:h-[400px] md:h-[420px] flex flex-col ${prize.mobileOrder} ${prize.desktopOrder} ${prize.transform} cursor-pointer [perspective:1000px] group`}
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <motion.div
@@ -159,7 +159,7 @@ const PrizePool = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-32 px-6 relative bg-transparent overflow-hidden">
+    <section ref={sectionRef} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative bg-transparent overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
         
         {/* Header Section */}
@@ -169,7 +169,7 @@ const PrizePool = () => {
           viewport={{ once: true }} 
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-7xl font-black text-white mb-4 tracking-tighter">
+          <h2 className="text-3xl sm:text-4xl md:text-7xl font-black text-white mb-4 tracking-tighter">
             Prize <span className="text-purple-500">Pool</span>
           </h2>
           <div className="h-[2px] w-24 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mt-6" />
@@ -180,7 +180,7 @@ const PrizePool = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative mx-auto max-w-4xl mb-32 p-12 overflow-hidden rounded-[3rem] border border-white/5 bg-[#050505]/60 shadow-[0_0_80px_-20px_rgba(168,85,247,0.15)] backdrop-blur-md"
+          className="relative mx-auto max-w-4xl mb-16 sm:mb-24 md:mb-32 p-6 sm:p-8 md:p-12 overflow-hidden rounded-[2rem] sm:rounded-[3rem] border border-white/5 bg-[#050505]/60 shadow-[0_0_80px_-20px_rgba(168,85,247,0.15)] backdrop-blur-md"
         >
           {/* Side Glow Lights */}
           <div className="absolute -top-12 -left-12 w-72 h-72 bg-purple-600 rounded-full blur-[110px] opacity-20 pointer-events-none"></div>
@@ -199,12 +199,12 @@ const PrizePool = () => {
             
             <div className="relative">
               <div className="absolute inset-0 blur-3xl bg-purple-600/30 rounded-full scale-150 opacity-60"></div>
-              <h3 className="relative text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter leading-none text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+              <h3 className="relative text-4xl sm:text-6xl md:text-9xl lg:text-[10rem] font-black tracking-tighter leading-none text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                 {totalPrize}
               </h3>
             </div>
 
-            <div className="mt-12 flex gap-8 text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+            <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-4 sm:gap-8 text-[8px] sm:text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
                 <span className="flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-cyan-400"></div> Sector :: 0x-Event</span>
                 <div className="w-[1px] h-3 bg-white/10"></div>
                 <span className="text-zinc-400">Protocol :: Encode V.2026</span>

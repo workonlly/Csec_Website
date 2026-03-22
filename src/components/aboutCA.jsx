@@ -124,7 +124,7 @@ function FeatureCard({ icon, title, desc, floatClass }) {
         {icon}
       </div>
       <h3 className="text-white font-semibold mb-1 md:mb-2">{title}</h3>
-      <p className="hidden md:block text-sm text-zinc-400 leading-relaxed">{desc}</p>
+      <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">{desc}</p>
     </div>
   );
 }

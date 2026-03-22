@@ -2,13 +2,13 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-black text-white py-6">
-            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-                <div className="mb-4 md:mb-0">
+        <footer className="bg-black text-white py-6 px-4">
+            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
+                <div className="mb-2 md:mb-0">
                     <h1 className="text-2xl font-bold">CSEC</h1>
                     <p className="text-sm">© 2024 CSEC. All rights reserved.</p>
                 </div>
-                <div className="flex space-x-4">
+                <div className="flex flex-wrap justify-center gap-4">
                     <a href="https://www.facebook.com/csec.nith" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
                         Facebook
                     </a>
