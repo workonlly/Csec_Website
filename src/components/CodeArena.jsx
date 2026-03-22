@@ -19,26 +19,58 @@ const CodeArena = () => {
 
   return (
     <div ref={containerRef} className="relative min-h-[120dvh] w-full overflow-hidden">
+      <div className="absolute inset-x-0 top-20 z-10 pointer-events-auto">
+        <a
+          href="https://rebrand.ly/nithamirpur"
+          target="_blank"
+          rel="noreferrer"
+          className="codearena-promo group relative block overflow-hidden border-y border-orange-500/60 bg-gradient-to-r from-black via-zinc-900 to-black py-1.5 pointer-events-auto"
+          aria-label="Visit Take You Forward"
+        >
+          <div className="codearena-promo-track flex w-max items-center">
+            <div className="flex shrink-0 items-center gap-8 pr-8 text-xs font-bold uppercase tracking-[0.25em] text-orange-200 sm:text-sm">
+              <img
+                src="/sponsors/tufLogo.png"
+                width={110}
+                alt="Take You Forward"
+                className="h-7 w-auto opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+              />
+              <span>Take You Forward x CodeArena</span>
+              <span>Prepare smarter. Code better. Win bigger.</span>
+              <span>Tap here to start your journey.</span>
+            </div>
+            <div className="flex shrink-0 items-center gap-8 pr-8 text-xs font-bold uppercase tracking-[0.25em] text-orange-200 sm:text-sm">
+              <img
+                src="/sponsors/tufLogo.png"
+                width={110}
+                alt="Take You Forward"
+                className="h-7 w-auto opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+              />
+              <span>Take You Forward x CodeArena</span>
+              <span>Prepare smarter. Code better. Win bigger.</span>
+              <span>Tap here to start your journey.</span>
+            </div>
+          </div>
+        </a>
+      </div>
       
       {/* 1. THE PLANET BACKGROUND - Now strictly centered vertically */}
       <motion.div
         style={{ y: yPlanet, scale: scalePlanet, rotate: rotatePlanet }}
-        className="fixed inset-0 z-0 pointer-events-none hidden lg:flex items-center justify-end overflow-visible px-12"
+        className="fixed inset-0 z-20 pointer-events-none hidden lg:flex items-center justify-end overflow-visible px-12"
       >
         <div className="w-[70%] h-[80%] transform lg:translate-x-24 opacity-80 lg:opacity-100">
           <PlanetScene />
         </div>
       </motion.div>
-
       {/* 2. THE CONTENT - Using flex-start with a controlled top-offset for consistency */}
       <motion.div
         style={{ opacity: opacityContent }}
-        className="relative z-10 flex flex-col justify-start min-h-screen px-6 md:px-12 lg:px-24 pt-[15vh] pb-20"
+        className="relative z-30 flex flex-col justify-start min-h-screen px-6 md:px-12 lg:px-24 pt-[15vh] pb-20 pointer-events-none"
       >
-        <div className="w-full max-w-7xl mx-auto">
+        <div className="w-full max-w-7xl mx-auto pointer-events-auto">
           {/* Left Content Section */}
           <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left">
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -46,7 +78,8 @@ const CodeArena = () => {
               className="mb-6"
             >
               <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-0 tracking-tighter leading-[0.85] text-white">
-                CODE <span className="text-purple-500">ARENA&apos;26</span>
+                <span className="block">CODE</span>
+                <span className="block codearena-hero-gradient p-1">ARENA&apos;26</span>
               </h1>
             </motion.div>
 

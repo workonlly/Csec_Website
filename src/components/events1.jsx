@@ -1,45 +1,30 @@
 "use client";
 
-import React, { useRef, useState, useCallback, useEffect } from "react";
-import { motion } from "framer-motion";
-import {
-  Terminal,
-  Zap,
-  Layers,
-  ChevronRight,
-  ChevronLeft,
-  Sparkles,
-  RotateCcw,
-} from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "./ui/carousel";
+import React, { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Terminal, Zap, Layers, ChevronRight, Sparkles } from 'lucide-react';
 
 // --- Individual Event Card Component ---
-const EventCard = ({
-  title,
-  description,
-  link,
-  icon: Icon,
-  platform,
-  date,
-  format,
-  accentColor,
-  accentGlow,
-}) => {
-  const [isFlipped, setIsFlipped] = useState(false);
+const EventCard = ({ title, description, link, icon: Icon, delay, comingSoon, onComingSoonClick }) => {
+  // Logic to determine if this specific card should be bigger (CodeArena)
   const isFeatured = title === "CodeArena";
 
-  const handleFlip = (e) => {
-    e.stopPropagation();
-    setIsFlipped(!isFlipped);
+  const handleCardClick = (event) => {
+    if (!comingSoon) return;
+    event.preventDefault();
+    onComingSoonClick?.(title);
   };
 
   return (
-    <div
-      className="w-full h-[380px] sm:h-[420px] [perspective:1200px]"
+    <motion.a 
+      href={link}
+      onClick={handleCardClick}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay }}
+      aria-disabled={comingSoon}
+      className={`block w-full ${isFeatured ? 'md:w-[42%] h-[55vh] z-20' : 'md:w-[29%] h-[45vh] z-10'} [perspective:1200px] group`}
     >
       <motion.div
         className="relative w-full h-full [transform-style:preserve-3d]"
@@ -148,24 +133,11 @@ const EventCard = ({
           <p className="text-xs sm:text-sm leading-relaxed text-zinc-400 font-light mb-5">
             {description}
           </p>
-
-          <a
-            href={link}
-            data-mission-link="true"
-            target={link.startsWith("http") ? "_blank" : "_self"}
-            rel={link.startsWith("http") ? "noopener noreferrer" : undefined}
-            className={`flex items-center gap-2 text-[10px] sm:text-xs font-bold text-white uppercase tracking-widest px-6 py-3 rounded-full border transition-all duration-300 hover:scale-105 active:scale-95
-            ${isFeatured ? "bg-purple-600/20 border-purple-500 hover:bg-purple-500" : "bg-white/5 border-white/10 hover:bg-white hover:text-black"}`}
-          >
-            Register Now <ChevronRight size={14} />
-          </a>
-
-          <button
-            className="mt-3 flex items-center gap-1.5 text-[9px] text-zinc-600 uppercase tracking-widest hover:text-zinc-400 transition-colors cursor-pointer"
-            onClick={handleFlip}
-          >
-            <RotateCcw size={10} /> Tap to flip back
-          </button>
+          
+          <div className={`mt-8 flex items-center gap-2 text-[10px] font-bold text-white uppercase tracking-widest px-8 py-3 rounded-full border transition-all duration-300
+            ${isFeatured ? 'bg-purple-600/20 border-purple-500 hover:bg-white hover:text-black' : 'bg-white/5 border-white/10 hover:bg-white hover:text-black'}`}>
+            {comingSoon ? 'Reveals Soon' : 'Initialize Mission'} <ChevronRight size={14} />
+          </div>
         </div>
       </motion.div>
     </div>
@@ -209,22 +181,11 @@ const DotIndicators = ({ total, current }) => (
 // --- Main Events Section ---
 const Events = () => {
   const sectionRef = useRef(null);
-  const [api, setApi] = useState(null);
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
+  const [isSoonModalOpen, setIsSoonModalOpen] = useState(false);
 
-  useEffect(() => {
-    if (!api) return;
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap());
-
-    const onSelect = () => setCurrent(api.selectedScrollSnap());
-    api.on("select", onSelect);
-    return () => api.off("select", onSelect);
-  }, [api]);
-
-  const scrollPrev = useCallback(() => api?.scrollPrev(), [api]);
-  const scrollNext = useCallback(() => api?.scrollNext(), [api]);
+  const openSoonModal = (eventTitle) => {
+    setIsSoonModalOpen(true);
+  };
 
   const eventData = [
     {
@@ -238,6 +199,8 @@ const Events = () => {
       description:
         "Test your algorithmic speed and precision in a high-stakes competitive quiz gauntlet.",
       link: "/codearena",
+      delay: 0.1,
+      comingSoon: true
     },
     {
       title: "CodeArena",
@@ -262,7 +225,9 @@ const Events = () => {
       description:
         "Leverage the power of LLMs to build at the speed of thought in this AI-powered coding competition.",
       link: "/codearena",
-    },
+      delay: 0.3,
+      comingSoon: true
+    }
   ];
 
   return (
@@ -299,50 +264,45 @@ const Events = () => {
           </p>
         </motion.div>
 
-        {/* Carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
-          <Carousel
-            setApi={setApi}
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4 sm:-ml-6">
-              {eventData.map((event, idx) => (
-                <CarouselItem
-                  key={idx}
-                  className="pl-4 sm:pl-6 basis-[85%] sm:basis-[70%] md:basis-1/3"
-                >
-                  <EventCard
-                    title={event.title}
-                    icon={event.icon}
-                    description={event.description}
-                    link={event.link}
-                    platform={event.platform}
-                    date={event.date}
-                    format={event.format}
-                    accentColor={event.accentColor}
-                    accentGlow={event.accentGlow}
-                  />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+        {/* Interactive Cards Area */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 lg:gap-10">
+          {eventData.map((event, idx) => (
+            <EventCard 
+              key={idx}
+              title={event.title}
+              icon={event.icon}
+              description={event.description}
+              link={event.link}
+              delay={event.delay}
+              comingSoon={event.comingSoon}
+              onComingSoonClick={openSoonModal}
+            />
+          ))}
+        </div>
 
-          {/* Custom Navigation Controls */}
-          <div className="flex items-center justify-center gap-6 mt-8 sm:mt-10">
-            <NavButton direction="prev" onClick={scrollPrev} disabled={!api} />
-            <DotIndicators total={count} current={current} />
-            <NavButton direction="next" onClick={scrollNext} disabled={!api} />
+        {isSoonModalOpen && (
+          <div
+            className="fixed inset-0 z-[120] flex items-center justify-center bg-black/70 px-6"
+            onClick={() => setIsSoonModalOpen(false)}
+          >
+            <div
+              className="w-full max-w-md rounded-3xl border border-purple-400/30 bg-zinc-950/95 p-8 text-center shadow-2xl shadow-purple-900/40"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <p className="text-[11px] font-black uppercase tracking-[0.35em] text-purple-300">Status Update</p>
+
+              <p className="mt-4 text-sm leading-relaxed text-zinc-300">This mission will be revealed soon. Stay tuned for the official launch.</p>
+              <button
+                type="button"
+                onClick={() => setIsSoonModalOpen(false)}
+                className="mt-6 rounded-full border border-purple-400/40 bg-purple-500/20 px-6 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white transition hover:bg-purple-500/35"
+              >
+                Close
+              </button>
+            </div>
           </div>
-        </motion.div>
+        )}
+
       </div>
     </section>
   );

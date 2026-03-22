@@ -10,18 +10,21 @@ import QueryForm from "../../components/queryform";
 import Events from "../../components/events1";
 export default function Home() {
   return (
-    <>
+    <div className="relative">
       <Background />
+      
       <CodeArena/>
-      <Countdown/>
-      <AboutCompetition/>
-      <Events></Events>
-      <PrizePool/>
-      <Timeline/>
-      <Sponsors/>
-      <QueryForm/>
-      <Footer/>
-    </>
+      <div className="relative z-40">
+        <Countdown/>
+        <AboutCompetition/>
+        <Events></Events>
+        <PrizePool/>
+        <Timeline/>
+        <Sponsors/>
+        <QueryForm/>
+        <Footer/>
+      </div>
+    </div>
 
   );
 }

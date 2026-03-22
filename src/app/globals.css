@@ -74,3 +74,41 @@
 .drop-shadow-glow {
   filter: drop-shadow(0 0 8px rgba(230, 57, 70, 0.7));
 }
+
+.codearena-promo-track {
+  animation: codearena-promo-scroll 18s linear infinite;
+}
+
+.codearena-promo:hover .codearena-promo-track {
+  animation-play-state: paused;
+}
+
+@keyframes codearena-promo-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.codearena-hero-gradient {
+  background-image: linear-gradient(90deg, #a855f7, #ffffff, #a855f7);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: codearena-hero-gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes codearena-hero-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
