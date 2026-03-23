@@ -74,6 +74,12 @@ export default function Navbar() {
     <>
       {/* Main Navbar with adjusted position */}
       <motion.nav
+      initial={{ y: 0, opacity: 1 }}
+      animate={{ 
+        y: scrolled ? -100 : 0,   
+        opacity: scrolled ? 0 : 1
+      }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
         className={`fixed w-full z-40 transition-all duration-300 text-white/90 ${
           scrolled
             ? "bg-black/50 backdrop-blur-md shadow-lg"

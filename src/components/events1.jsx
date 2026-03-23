@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Zap, Layers, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 
+
 // --- Individual Event Card Component ---
 const EventCard = ({
   title,
@@ -22,6 +23,7 @@ const EventCard = ({
   // Logic to determine if this specific card should be bigger (CodeArena)
   const isFeatured = title === "CodeArena";
   const [isFlipped, setIsFlipped] = useState(false);
+  const timerRef = useRef(null);
 
   const handleCardClick = (event) => {
     if (!comingSoon) return;
@@ -30,9 +32,25 @@ const EventCard = ({
   };
 
   const handleFlip = (event) => {
-    event.preventDefault();
-    setIsFlipped((prev) => !prev);
-  };
+  event.preventDefault();
+  event.stopPropagation(); 
+
+  setIsFlipped((prev) => {
+    const newState = !prev;
+
+    
+    if (timerRef.current) clearTimeout(timerRef.current);
+
+    
+    if (newState === true) {
+      timerRef.current = setTimeout(() => {
+        setIsFlipped(false);
+      }, 10000); // 10000ms = 10 seconds
+    }
+
+    return newState;
+  });
+};
 
   return (
     <motion.a 
@@ -157,7 +175,9 @@ const EventCard = ({
           <div className={`mt-8 flex items-center gap-2 text-[10px] font-bold text-white uppercase tracking-widest px-8 py-3 rounded-full border transition-all duration-300
             ${isFeatured ? 'bg-purple-600/20 border-purple-500 hover:bg-white hover:text-black' : 'bg-white/5 border-white/10 hover:bg-white hover:text-black'}`}>
             {comingSoon ? 'Reveals Soon' : 'Initialize Mission'} <ChevronRight size={14} />
+            
           </div>
+          
         </div>
       </motion.div>
     </motion.a>

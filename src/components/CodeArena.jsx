@@ -59,7 +59,7 @@ const CodeArena = () => {
         style={{ y: yPlanet, scale: scalePlanet, rotate: rotatePlanet }}
         className="fixed inset-0 z-20 pointer-events-none hidden lg:flex items-center justify-end overflow-visible px-12"
       >
-        <div className="w-[70%] h-[80%] transform lg:translate-x-24 opacity-80 lg:opacity-100">
+        <div className="w-[70%] h-[85%] transform lg:translate-y-9 lg:translate-x-24 opacity-80 lg:opacity-100">
           <PlanetScene />
         </div>
       </motion.div>
