@@ -28,7 +28,8 @@ export default function Sponsors() {
               Our <span className="text-purple-500">Sponsors</span>
             </h2>
             <p className="text-zinc-500 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-              Empowering the next generation of algorithmic pioneers through strategic collaboration.
+              Empowering the next generation of algorithmic pioneers through
+              strategic collaboration.
             </p>
             <div className="h-1 w-32 bg-gradient-to-r from-purple-500 to-transparent mx-auto mt-8 opacity-30" />
           </motion.div>
@@ -48,8 +49,14 @@ export default function Sponsors() {
           />
 
           <div className="relative mx-auto flex h-[260px] sm:h-[300px] md:h-[340px] lg:h-[420px] w-full max-w-5xl flex-col items-center justify-center overflow-hidden rounded-[2rem] sm:rounded-[3rem] border-2 border-purple-500/40 px-4 sm:px-6 py-8 sm:py-10 shadow-[0_0_45px_rgba(168,85,247,0.25)] md:px-12">
-            <div className="pointer-events-none absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(to right, #ffffff12 1px, transparent 1px), linear-gradient(to bottom, #ffffff12 1px, transparent 1px)', backgroundSize: '34px 34px' }} />
-
+            <div
+              className="pointer-events-none absolute inset-0 opacity-10"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, #ffffff12 1px, transparent 1px), linear-gradient(to bottom, #ffffff12 1px, transparent 1px)",
+                backgroundSize: "34px 34px",
+              }}
+            />
 
             <h3 className="relative z-10 text-center text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase tracking-tighter text-white mb-5">
               Powered By
@@ -60,7 +67,6 @@ export default function Sponsors() {
                 src="/sponsors/unstop.webp"
                 alt="Unstop"
                 className="h-20 rounded-md w-auto object-contain md:h-30"
-                
                 loading="lazy"
               />
             </div>
@@ -86,8 +92,14 @@ export default function Sponsors() {
           />
 
           <div className="relative mx-auto flex h-[260px] sm:h-[300px] md:h-[340px] lg:h-[420px] w-full max-w-5xl flex-col items-center justify-center overflow-hidden rounded-[2rem] sm:rounded-[3rem] border-2 border-purple-500/40 px-4 sm:px-6 py-8 sm:py-10 shadow-[0_0_45px_rgba(168,85,247,0.25)] md:px-12">
-            <div className="pointer-events-none absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(to right, #ffffff12 1px, transparent 1px), linear-gradient(to bottom, #ffffff12 1px, transparent 1px)', backgroundSize: '34px 34px' }} />
-
+            <div
+              className="pointer-events-none absolute inset-0 opacity-10"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, #ffffff12 1px, transparent 1px), linear-gradient(to bottom, #ffffff12 1px, transparent 1px)",
+                backgroundSize: "34px 34px",
+              }}
+            />
 
             <h3 className="relative z-10 text-center text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase tracking-tighter text-white mb-5">
               Special Thanks To
@@ -96,18 +108,13 @@ export default function Sponsors() {
             <div className="relative z-10 rounded-full border border-purple-300/35 bg-purple-500/15 p-5 shadow-[0_0_24px_rgba(168,85,247,0.35)] md:p-6">
               <img
                 src="/sponsors/tufLogo.png"
-                alt="Unstop"
+                alt="takeUforward"
                 className="h-10 rounded-md w-auto object-contain md:h-10"
-                
                 loading="lazy"
               />
             </div>
 
             <div className="relative z-10 my-4 h-[3px] w-20 rounded-full bg-purple-400 shadow-[0_0_20px_#a855f7]" />
-
-            <p className="relative z-10 text-center text-[11px] font-black uppercase tracking-[0.38em] text-purple-200 md:text-xs">
-              specailly thanking to take you forward for sponsoring us
-            </p>
           </div>
         </motion.div>
 
@@ -130,14 +137,14 @@ export default function Sponsors() {
                 >
                   {/* Gradient Background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-pink-500/10 rounded-3xl" />
-                  
+
                   {/* Border with Glow */}
                   <div className="absolute inset-0 rounded-3xl border-2 border-purple-400/30 group-hover:border-purple-400/60 transition-all duration-500" />
                   <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-purple-500/30 via-transparent to-transparent shadow-[inset_0_0_30px_rgba(168,85,247,0.3),0_0_40px_rgba(168,85,247,0.4)]" />
-                  
+
                   {/* Backdrop */}
                   <div className="absolute inset-0 bg-white/[0.03] backdrop-blur-lg rounded-3xl group-hover:bg-white/[0.08] transition-all duration-500" />
-                  
+
                   {/* Logo Container */}
                   <div className="relative z-10 h-[90%] w-[90%] flex items-center justify-center">
                     <img
@@ -146,10 +153,10 @@ export default function Sponsors() {
                       className="h-full w-full object-contain transition-all duration-500 group-hover:scale-125 group-hover:brightness-110 filter drop-shadow-[0_0_15px_rgba(168,85,247,0.2)] group-hover:drop-shadow-[0_0_25px_rgba(168,85,247,0.4)]"
                     />
                   </div>
-                  
+
                   {/* Top Accent Light */}
                   <div className="absolute top-0 left-1/4 w-32 h-32 bg-gradient-to-b from-purple-400/30 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  
+
                   {/* Bottom Accent Light */}
                   <div className="absolute bottom-0 right-1/4 w-32 h-32 bg-gradient-to-t from-pink-400/20 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </div>
