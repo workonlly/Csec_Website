@@ -111,10 +111,6 @@ const CodeArena = () => {
                 icon={<Trophy size={18} className="text-purple-400" />} 
                 text="Bounties featuring cash prizes & exclusive gear" 
               />
-              <FeatureLine 
-                icon={<Terminal size={18} className="text-magenta-400" />} 
-                text="Live ICPC-style Competitive Programming Contest" 
-              />
             </motion.div>
 
             {/* Stat Cards Grid */}
@@ -139,11 +135,32 @@ const CodeArena = () => {
                 value="₹50,000+" 
                 icon={<Trophy size={16} className="text-amber-400" />} 
               />
-              <StatCard 
-                label="Battle Engine" 
-                value="ICPC Style" 
-                icon={<Terminal size={16} className="text-magenta-400" />} 
-              />
+        <a href="https://chat.whatsapp.com/BfsQ6JWzza0BpzFQtguA0f" target="_blank">
+  <div className="group p-4 bg-transparent border border-white/10 rounded-2xl flex flex-col justify-between h-full transition-all duration-300 hover:bg-[#25D366] hover:border-[#25D366] hover:shadow-md hover:shadow-[#25D366]/30 cursor-pointer active:scale-[0.98]">
+
+    {/* Top (icon + label style like reference) */}
+    <div className="flex items-center gap-2 mb-2 text-white/60">
+      <div className="w-6 h-6 flex items-center justify-center">
+        <img
+          src="/sponsors/whats.svg"
+          width={18}
+          height={18}
+          alt="community"
+        />
+      </div>
+      <span className="text-[10px] uppercase font-black tracking-widest">
+        Community
+      </span>
+    </div>
+
+    {/* Bottom (main text like value) */}
+    <p className="text-white font-bold text-sm sm:text-base group-hover:text-white">
+      Join Here
+    </p>
+
+  </div>
+</a>
+             
             </motion.div>
           </div>
         </div>

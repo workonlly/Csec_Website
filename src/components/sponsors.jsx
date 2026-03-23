@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 export default function Sponsors() {
   const sponsorlogos = [
-    { name: "TUF", icon: "/sponsors/tufLogo.png" },
     { name: "Codehurdle", icon: "/sponsors/codehurdleLogo.webp" },
     { name: "Praksh", icon: "/sponsors/prakshaLogo.png" },
     { name: "Upto Skills", icon: "/sponsors/uptoskills.png" },
@@ -70,6 +69,44 @@ export default function Sponsors() {
 
             <p className="relative z-10 text-center text-[11px] font-black uppercase tracking-[0.38em] text-purple-200 md:text-xs">
               Unstop Strategic Partner
+            </p>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative mb-14"
+        >
+          <motion.div
+            animate={{ opacity: [0.22, 0.5, 0.22], scale: [0.96, 1.02, 0.96] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="pointer-events-none absolute left-1/2 top-1/2 h-52 w-[92%] max-w-5xl -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-500/20 blur-[90px]"
+          />
+
+          <div className="relative mx-auto flex h-[260px] sm:h-[300px] md:h-[340px] lg:h-[420px] w-full max-w-5xl flex-col items-center justify-center overflow-hidden rounded-[2rem] sm:rounded-[3rem] border-2 border-purple-500/40 px-4 sm:px-6 py-8 sm:py-10 shadow-[0_0_45px_rgba(168,85,247,0.25)] md:px-12">
+            <div className="pointer-events-none absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(to right, #ffffff12 1px, transparent 1px), linear-gradient(to bottom, #ffffff12 1px, transparent 1px)', backgroundSize: '34px 34px' }} />
+
+
+            <h3 className="relative z-10 text-center text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase tracking-tighter text-white mb-5">
+              Special Thanks To
+            </h3>
+
+            <div className="relative z-10 rounded-full border border-purple-300/35 bg-purple-500/15 p-5 shadow-[0_0_24px_rgba(168,85,247,0.35)] md:p-6">
+              <img
+                src="/sponsors/tufLogo.png"
+                alt="Unstop"
+                className="h-10 rounded-md w-auto object-contain md:h-10"
+                
+                loading="lazy"
+              />
+            </div>
+
+            <div className="relative z-10 my-4 h-[3px] w-20 rounded-full bg-purple-400 shadow-[0_0_20px_#a855f7]" />
+
+            <p className="relative z-10 text-center text-[11px] font-black uppercase tracking-[0.38em] text-purple-200 md:text-xs">
+              specailly thanking to take you forward for sponsoring us
             </p>
           </div>
         </motion.div>

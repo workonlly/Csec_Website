@@ -30,23 +30,23 @@ export default function Timeline() {
       time: "25 March",
       stepNumber: "03",
     },
+     {
+      title: "Logic Loop Registration start",
+      desc: "Up To Skills Quiz starts. Test your foundational knowledge before the main event.",
+      time: "30 March",
+      stepNumber: "04",
+    },
     {
 
       title: "Vibe Coding Arena Ends",
       desc: "Vibe coding event close. Last call to submit the galactic battle.",
       time: "04 April",
-      stepNumber: "04",
-    },
-    {
-      title: "Logic Loop",
-      desc: "Up To Skills Quiz starts. Test your foundational knowledge before the main event.",
-      time: "05 April - 10 AM",
       stepNumber: "05",
     },
     {
-      title: "Guest Lecture",
-      desc: "Expert session from industry leaders to inspire and guide the participants.",
-      time: "05 April - 11 AM",
+      title: "Logic Loop ends",
+      desc: "The compilers have cooled, the test cases are closed.",
+      time: "04 April",
       stepNumber: "06",
     },
     {
@@ -56,10 +56,16 @@ export default function Timeline() {
       stepNumber: "07",
     },
     {
+      title: "Guest Lecture",
+      desc: "Expert session from industry leaders to inspire and guide the participants.",
+      time: "05 April - 1 PM",
+      stepNumber: "08",
+    },
+    {
       title: "Final Results",
       desc: "Winners are announced. Top performers take home the bounty from the prize pool.",
-      time: "05 April - 3 PM",
-      stepNumber: "08",
+      time: "05 April - 2:30 PM",
+      stepNumber: "09",
     },
   ];
 
