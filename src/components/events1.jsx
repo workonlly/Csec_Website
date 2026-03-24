@@ -228,20 +228,7 @@ const Events = () => {
   };
 
   const eventData = [
-    {
-      title: "Logic Loop",
-      icon: Terminal,
-      platform: "UpToSkills",
-      date: "5 April",
-      format: "DSA Quiz",
-      accentColor: "text-cyan-400 drop-shadow-[0_0_8px_#22d3ee]",
-      accentGlow: "bg-cyan-600",
-      description:
-        "Test your algorithmic speed and precision in a high-stakes competitive quiz gauntlet.",
-      link: "/codearena",
-      delay: 0.1,
-      comingSoon: true
-    },
+    
     {
       title: "CodeArena",
       icon: Zap,
@@ -254,20 +241,7 @@ const Events = () => {
         "Solve the complex, optimize the simple, and dominate the live global leaderboard in a timed coding battle.",
       link: "https://unstop.com/o/1cJ2LFR?utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Logged_out_userhttps://share.google/JZJwkBcHxZVeJOoh4",
     },
-    {
-      title: "Vibe Code Arena",
-      icon: Layers,
-      platform: "HackerEarth",
-      date: "25 Mar – 4 Apr",
-      format: "AI Prompting",
-      accentColor: "text-pink-400 drop-shadow-[0_0_8px_#f472b6]",
-      accentGlow: "bg-pink-600",
-      description:
-        "Leverage the power of LLMs to build at the speed of thought in this AI-powered coding competition.",
-      link: "/codearena",
-      delay: 0.3,
-      comingSoon: true
-    }
+   
   ];
 
   return (
@@ -296,7 +270,7 @@ const Events = () => {
           </div>
 
           <h2 className="text-3xl sm:text-5xl md:text-8xl font-black tracking-tighter text-white">
-            Our <span className="text-purple-500">Events</span>
+            Our <span className="text-purple-500">Event</span>
           </h2>
 
           <p className="mx-auto mt-4 sm:mt-6 max-w-2xl font-light text-zinc-500 text-sm sm:text-base md:text-xl">
