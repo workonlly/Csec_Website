@@ -241,6 +241,20 @@ const Events = () => {
         "Solve the complex, optimize the simple, and dominate the live global leaderboard in a timed coding battle.",
       link: "https://unstop.com/o/1cJ2LFR?utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Logged_out_userhttps://share.google/JZJwkBcHxZVeJOoh4",
     },
+      {
+      title: "Logic Loop",
+      icon: Terminal,
+      platform: "UpToSkills",
+      date: "5 April",
+      format: "DSA Quiz",
+      accentColor: "text-cyan-400 drop-shadow-[0_0_8px_#22d3ee]",
+      accentGlow: "bg-cyan-600",
+      description:
+        "Test your algorithmic speed and precision in a high-stakes competitive quiz gauntlet.",
+      link: "/codearena",
+      delay: 0.1,
+      comingSoon: true
+    },
    
   ];
 

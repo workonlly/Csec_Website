@@ -5,6 +5,7 @@ export default function Sponsors() {
   const sponsorlogos = [
     { name: "Codehurdle", icon: "/sponsors/codehurdleLogo.webp" },
     { name: "Praksh", icon: "/sponsors/prakshaLogo.png" },
+    { name: "Upto Skills", icon: "/sponsors/uptoskills.png" },
   ];
 
   const marqueeLogos = [...sponsorlogos, ...sponsorlogos];
