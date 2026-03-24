@@ -105,40 +105,9 @@ const PrizeCard = ({ prize }) => {
 const PrizePool = () => {
   const sectionRef = React.useRef(null);
   
-  const totalPrize = "₹50,000+";
+  const totalPrize = "₹25,000+";
   const breakdown = [
-    {
-      contest: "Vibe Coding Arena",
-      amount: "Revealing..",
-      first: "------",
-      second: "------",
-      third: "------",
-      info: "Awarded for the most creative, fluid, and innovative competition with llms.",
-      icon: Medal,
-      color: "text-zinc-300",
-      bgGlow: "from-blue-500/20",
-      borderGlow: "from-blue-500",
-      delay: 0.2,
-      mobileOrder: "order-2",
-      desktopOrder: "md:order-1",
-      transform: "md:translate-y-8" 
-    },
-    {
-      contest: "Logic Loop",
-      amount: "Revealing..",
-      first: "------",
-      second: "------",
-      third: "------",
-      info: "Awarded for flawless algorithmic problem-solving and ultimate speed.",
-      icon: Trophy,
-      color: "text-purple-400",
-      bgGlow: "from-purple-500/20",
-      borderGlow: "from-purple-500",
-      delay: 0,
-      mobileOrder: "order-1", 
-      desktopOrder: "md:order-2", 
-      transform: "md:-translate-y-4 scale-105 z-10" 
-    },
+    
     {
       contest: "CodeArena",
       amount: "₹25,000",

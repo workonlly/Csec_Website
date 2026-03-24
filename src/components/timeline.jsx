@@ -25,34 +25,9 @@ export default function Timeline() {
       stepNumber: "02",
     },
     {
-      title: "Vibe Coding Arena Registration",
-      desc: "HackerEarth Vibe Coding Event (online) live registrations open. Secure your spot in the arena.",
-      time: "25 March",
-      stepNumber: "03",
-    },
-     {
-      title: "Logic Loop Registration start",
-      desc: "Up To Skills Quiz starts. Test your foundational knowledge before the main event.",
-      time: "30 March",
-      stepNumber: "04",
-    },
-    {
-
-      title: "Vibe Coding Arena Ends",
-      desc: "Vibe coding event close. Last call to submit the galactic battle.",
-      time: "04 April",
-      stepNumber: "05",
-    },
-    {
-      title: "Logic Loop ends",
-      desc: "The compilers have cooled, the test cases are closed.",
-      time: "04 April",
-      stepNumber: "06",
-    },
-    {
-      title: " Code Arena - Main Contest",
+      title: " Code Arena",
       desc: "The ultimate battle begins. High-intensity coding challenges go live.",
-      time: "05 April - 1 PM",
+      time: "05 April - 11 AM",
       stepNumber: "07",
     },
     {
@@ -64,7 +39,7 @@ export default function Timeline() {
     {
       title: "Final Results",
       desc: "Winners are announced. Top performers take home the bounty from the prize pool.",
-      time: "05 April - 2:30 PM",
+      time: "05 April - 2:00 PM",
       stepNumber: "09",
     },
   ];
