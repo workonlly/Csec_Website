@@ -7,6 +7,7 @@ export default function Sponsors() {
     { name: "Praksh", icon: "/sponsors/prakshaLogo.png" },
     { name: "Upto Skills", icon: "/sponsors/uptoskills.png" },
     { name: "Hackerearth", icon: "/sponsors/hackerearth.webp" },
+    { name: "HelioExpect", icon: "/sponsors/helio.webp" },
   ];
 
   const marqueeLogos = [...sponsorlogos, ...sponsorlogos];

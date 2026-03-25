@@ -54,6 +54,7 @@ const EventCard = ({
 
   return (
     <motion.a 
+    target='_blank'
       href={link}
       onClick={handleCardClick}
       initial={{ opacity: 0, y: 20 }}
@@ -238,9 +239,8 @@ const Events = () => {
       accentGlow: "bg-pink-600",
       description:
         "Leverage the power of LLMs to build at the speed of thought in this AI-powered coding competition.",
-      link: "/codearena",
+      link: "https://vibecodearena.ai/nit-hamirpur",
       delay: 0.3,
-      comingSoon: true
     },
     
     {
@@ -265,9 +265,8 @@ const Events = () => {
       accentGlow: "bg-cyan-600",
       description:
         "Test your algorithmic speed and precision in a high-stakes competitive quiz gauntlet.",
-      link: "/codearena",
+      link: "https://uptoskills.com/leagues/59/view",
       delay: 0.1,
-      comingSoon: true
     },
    
   ];

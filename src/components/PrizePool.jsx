@@ -105,7 +105,7 @@ const PrizeCard = ({ prize }) => {
 const PrizePool = () => {
   const sectionRef = React.useRef(null);
   
-  const totalPrize = "₹25,000+";
+  const totalPrize = "₹50,000+";
   const breakdown = [
       {
       contest: "Vibe Coding Arena",
