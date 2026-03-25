@@ -140,7 +140,23 @@ const PrizePool = () => {
       mobileOrder: "order-3",
       desktopOrder: "md:order-3",
       transform: "md:translate-y-8" 
-    }
+    },
+    {
+      contest: "Logic Loop",
+      amount: "Revealing..",
+      first: "------",
+      second: "------",
+      third: "------",
+      info: "Awarded for flawless algorithmic problem-solving and ultimate speed.",
+      icon: Trophy,
+      color: "text-purple-400",
+      bgGlow: "from-purple-500/20",
+      borderGlow: "from-purple-500",
+      delay: 0,
+      mobileOrder: "order-1", 
+      desktopOrder: "md:order-2", 
+      transform: "md:-translate-y-4 scale-105 z-10" 
+    },
   ];
 
   return (
