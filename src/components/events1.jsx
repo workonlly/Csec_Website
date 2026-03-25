@@ -228,6 +228,20 @@ const Events = () => {
   };
 
   const eventData = [
+     {
+      title: "Vibe Code Arena",
+      icon: Layers,
+      platform: "HackerEarth",
+      date: "25 Mar – 4 Apr",
+      format: "AI Prompting",
+      accentColor: "text-pink-400 drop-shadow-[0_0_8px_#f472b6]",
+      accentGlow: "bg-pink-600",
+      description:
+        "Leverage the power of LLMs to build at the speed of thought in this AI-powered coding competition.",
+      link: "/codearena",
+      delay: 0.3,
+      comingSoon: true
+    },
     
     {
       title: "CodeArena",
