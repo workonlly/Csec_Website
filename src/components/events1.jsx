@@ -54,6 +54,7 @@ const EventCard = ({
 
   return (
     <motion.a 
+    target='_blank'
       href={link}
       onClick={handleCardClick}
       initial={{ opacity: 0, y: 20 }}
@@ -228,6 +229,19 @@ const Events = () => {
   };
 
   const eventData = [
+     {
+      title: "Vibe Code Arena",
+      icon: Layers,
+      platform: "HackerEarth",
+      date: "25 Mar – 4 Apr",
+      format: "AI Prompting",
+      accentColor: "text-pink-400 drop-shadow-[0_0_8px_#f472b6]",
+      accentGlow: "bg-pink-600",
+      description:
+        "Leverage the power of LLMs to build at the speed of thought in this AI-powered coding competition.",
+      link: "https://vibecodearena.ai/nit-hamirpur",
+      delay: 0.3,
+    },
     
     {
       title: "CodeArena",
@@ -240,6 +254,19 @@ const Events = () => {
       description:
         "Solve the complex, optimize the simple, and dominate the live global leaderboard in a timed coding battle.",
       link: "https://unstop.com/o/1cJ2LFR?utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Logged_out_userhttps://share.google/JZJwkBcHxZVeJOoh4",
+    },
+      {
+      title: "Logic Loop",
+      icon: Terminal,
+      platform: "UpToSkills",
+      date: "5 April",
+      format: "DSA Quiz",
+      accentColor: "text-cyan-400 drop-shadow-[0_0_8px_#22d3ee]",
+      accentGlow: "bg-cyan-600",
+      description:
+        "Test your algorithmic speed and precision in a high-stakes competitive quiz gauntlet.",
+      link: "https://uptoskills.com/leagues/59/view",
+      delay: 0.1,
     },
    
   ];
