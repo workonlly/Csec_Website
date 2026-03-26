@@ -141,6 +141,11 @@ const EventCard = ({
             >
               View Mission <ChevronRight size={12} />
             </button>
+             <div className={`mt-8 flex items-center gap-2 text-[10px] font-bold text-white uppercase tracking-widest px-8 py-3 rounded-full border transition-all duration-300
+            ${isFeatured ? 'bg-purple-600/20 border-purple-500 hover:bg-white hover:text-black' : 'bg-white/5 border-white/10 hover:bg-white hover:text-black'}`}>
+            {comingSoon ? 'Reveals Soon' : 'Initialize Mission'} <ChevronRight size={14} />
+            
+            </div>
           </div>
         </div>
 
@@ -173,11 +178,7 @@ const EventCard = ({
             {description}
           </p>
           
-          <div className={`mt-8 flex items-center gap-2 text-[10px] font-bold text-white uppercase tracking-widest px-8 py-3 rounded-full border transition-all duration-300
-            ${isFeatured ? 'bg-purple-600/20 border-purple-500 hover:bg-white hover:text-black' : 'bg-white/5 border-white/10 hover:bg-white hover:text-black'}`}>
-            {comingSoon ? 'Reveals Soon' : 'Initialize Mission'} <ChevronRight size={14} />
-            
-          </div>
+         
           
         </div>
       </motion.div>
